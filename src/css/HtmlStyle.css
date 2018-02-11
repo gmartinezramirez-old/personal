@@ -1,0 +1,574 @@
+
+/*
+html {
+
+--totalWidth: 575px;
+--totalHeight: 470px;
+
+--topWidth: 575px;
+--topHeight: 70px;
+
+--groupWidth: 125px;
+--groupHeight:400px;
+
+--fileWidth:  175px;
+--fileHeight:400px;
+
+--descWidth: 275px;
+--descHeight: 400px;
+
+--chartWidth: 100px;
+
+--fullwidth: 100%;
+}*/
+
+/*html {
+
+--totalWidth: 100%;
+--totalHeight: 100%;
+
+--topWidth: 100%;
+--topHeight: 10vh;
+
+--groupWidth: 15vw;
+--groupHeight:80vh;
+
+--fileWidth:  20vw;
+--fileHeight:80vh;
+
+--descWidth: 65vw;
+--descHeight: 80vh;
+
+--chartWidth: 499px;
+
+--fullwidth: 100%;
+}*/
+
+html {
+
+  --totalWidth: 600px;
+  --totalHeight: 450px;
+  --topWidth: 600px;
+  --topHeight: 70px;
+  --groupWidth: 130px;
+  --groupHeight:380px;
+  --fileWidth:  180px;
+  --fileHeight: 380px;
+  --descWidth: 290px;
+  --descHeight: 380px;
+  --chartWidth: 150px;
+
+  --fullwidth: 100%;
+}
+
+body {
+  margin: 0;
+  /*background-color: #A66FA6;*/
+  /*background-image: url("../images/triangulated-image.png");*/
+  background-size: 100% 100%;
+  background-attachment: fixed;
+  /*overflow: hidden;*/
+  overflow-y: scroll;
+
+
+}
+
+#bodyBackground {
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  position:absolute;
+
+}
+
+@font-face { font-family: RalewayReg; src: url('../Raleway/Raleway-Regular.ttf'); }
+@font-face { font-family: RalewayBld; src: url('../Raleway/Raleway-Bold.ttf'); }
+@font-face { font-family: RalewayMed; src: url('../Raleway/Raleway-Medium.ttf'); }
+@font-face { font-family: RalewayRegIta; src: url('../Raleway/Raleway-Italic.ttf'); }
+
+
+.backIcons {
+  width: 160px;
+  height: 45px;
+  margin: auto;
+  position: absolute;
+  left: 35px; bottom: 20px;
+  z-index: 2;
+}
+
+#finderReturnIcon {
+  height: 70px;
+  width: 70px;
+  float: left;
+  background-image: url();
+}
+
+#backShadow{
+
+  width: var(--totalWidth);
+  height: var(--totalHeight);
+  animation-timing-function: linear; /* or: ease, ease-in, ease-in-out, linear, cubic-bezier(x1, y1, x2, y2) */
+
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  /*margin-left:-5px;*/
+
+}
+
+.bothWindows{
+  width: var(--totalWidth);
+  height: var(--totalHeight);
+  animation-timing-function: linear;
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  -webkit-filter: drop-shadow(0 0 20px rgba(0,0,0,.7));
+  -moz-filter: drop-shadow(0 0px 20px  rgba(0,0,0,.7));
+  -ms-filter: drop-shadow(0 0px 20px  rgba(0,0,0,.7));
+  -o-filter: drop-shadow(0 0px 20px  rgba(0,0,0,.7));
+  filter: drop-shadow(0 0px 20px  rgba(0,0,0,.7));
+
+}
+
+
+.finderTopBar {
+  position: absolute;
+  min-width:  150px;
+
+  width:var(--topWidth);
+  height: var(--topHeight);
+  animation-timing-function: linear;
+  /*background-image: url("../images/finderTopBar.png");*/
+  background: #edebed; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(#edebed, #d8d6d8); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#edebed, #d8d6d8); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#edebed, #d8d6d8); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#edebed, #d8d6d8); /* Standard syntax */
+  border-radius: 5px 5px 0px 0px;
+  background-size: cover;
+
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+
+  -webkit-box-shadow:inset 3px 3px 2px -2px #333;
+  -moz-box-shadow:inset 3px 3px 2px -2px #333;
+  box-shadow:inset 0px 2px 1px -2px #333 ;
+
+  -webkit-box-shadow:inset 0px -2px 1px -2px #333;
+  -moz-box-shadow:inset 0px -2px 1px -2px #333;
+  box-shadow:inset 0px -2px 1px -2px #333 ;
+
+
+}
+.finderTopBarIcon {
+  float: left;
+  margin: 0;
+  margin-left: 9px;
+  padding: 12px;
+  max-width: 10px;
+  background-size: contain;
+  opacity: 1.0;
+  margin-top: 8px;
+
+  background-image: url("../images/folder.png");
+}
+
+.headerDisplay {
+  height: 35px;
+  width: 200px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.finderTopBarText {
+  margin-left: 0;
+  height: 35px;
+  width: 320px;
+  overflow: hidden;
+  position: absolute;
+}
+
+.finderTopBarText p {
+  font-size: 20px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 1px;
+  font-family: RalewayReg, sans-serif;
+}
+
+
+.bottomElemeents {
+  /*padding-top: 0;*/
+  padding-top: var(--topHeight);
+  width: var(--totalWidth);
+  height: var(--groupHeight);
+  animation-timing-function: linear;
+  height: 430px;
+
+}
+
+
+
+.finderSideBar {
+  float: left;
+  width: var(--groupWidth);
+  height: var(--groupHeight);
+  animation-timing-function: linear;
+
+  background-size: cover;
+
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #eef2f2;
+
+  border-radius: 0px 0px 0px 5px;
+
+
+
+
+}
+.finderSideBarImage {
+  position: absolute;
+  float: left;
+  width: 130px;
+  height: 380px;
+
+  background-size: cover;
+
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  /*background-image: url("../images/finderSideBar.png");*/
+  opacity: 0.99;
+
+}
+
+.finderFilesBar {
+
+  float: left;
+  width: var(--fileWidth);
+  height: var(--fileHeight);
+  animation-timing-function: linear;
+  background-size: cover;
+
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #FFFFFF;
+
+  /*Also found under filestyle and filestyle2*/
+  -webkit-box-shadow:inset 2px 0px 1px -2px #777;
+  -moz-box-shadow:inset 2px 0px 1px -2px #777;
+  box-shadow:inset 2px 0px 1px -2px #777;
+}
+
+.finderDescriptionBar {
+  float: left;
+  width: var(--descWidth);
+  height: var(--descHeight);
+  animation-timing-function: linear;
+
+  background-color: #FFFFFF;
+  border-radius: 0px 0px 5px 0px;
+  /*-webkit-box-shadow:inset 2px 0px 0.1px -2px #333;
+  -moz-box-shadow:inset 2px 0px 0.1px -2px #333;
+  box-shadow:inset 2px 0px 0.1px -2px #333 ;*/
+
+  -webkit-box-shadow:inset 2px 0px 1px -2px #333;
+  -moz-box-shadow:inset 2px 0px 1px -2px #333;
+  box-shadow:inset 2px 0px 1px -2px #333;
+
+
+
+}
+
+#findSideTopBar {
+  height: 25px;
+  width: 100px;
+  margin-left: 12px;
+
+  font-family: RalewayBld, sans-serif;
+  font-size: 13px;
+  color: #666666;
+
+}
+
+#findSideTopBar p {
+
+}
+
+
+#descReadmeTutorial {
+  /*height: var(--descHeight);
+  width: var(--descWidth);*/
+  bottom: 0;
+  /*overflow:auto;*/
+
+}
+
+#descDescription {
+  /*overflow-y:scroll;*/
+
+  margin-top: 0px;
+}
+
+#descDescription p{
+  padding-left: 8%;
+  padding-right: 8%;
+  margin-top: 15px;
+  text-align: left;
+  font-size: 14px;
+  font-family: RalewayReg, sans-serif;
+  color: #111111;
+
+}
+#descDescription h1{
+  padding-left: 15px;
+  padding-right: 15px;
+  text-align: center;
+  font-size: 19px;
+  font-family: RalewayReg;
+  color: #111111;
+
+}
+#descDescription h2{
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-top: -12px;
+  text-align: center;
+  font-size: 14px;
+  font-family: RalewayRegIta, sans-serif;
+  color: #111111;
+
+}
+
+#myProfile p {
+
+}
+
+
+
+#profileDiv {
+  height: 35px;
+  width: auto;
+  overflow: hidden;
+  padding-left: 48px;
+  position: absolute;
+  opacity: 1.0;
+}
+
+#profileDiv p {
+  font-size: 13px;
+  margin-top: 17px;
+  line-height: 1px;
+  font-family: RalewayMed, sans-serif;
+
+}
+
+#filesDiv {
+  height: 32px;
+  /*width: var(-fileWidth);*/
+  overflow: hidden;
+  padding-left: 35px;
+  position: absolute;
+
+}
+
+#filesDiv p {
+  font-size: 13px;
+  margin-top: 18.5px;
+  line-height: 0px;
+  font-family: RalewayMed, sans-serif;
+}
+
+#datesContainer {
+  margin: 0px auto;
+  height: 72px;
+  width: 300px;
+}
+
+#datesTitle {
+  line-height:  3px;
+  float: left;
+  height: 72px;
+  text-align: right;
+  font-family: RalewayMed, sans-serif;
+  color: #888888;
+  font-size: 12px;
+  width: 90px;
+
+}
+
+#datesText {
+  line-height:  3px;
+  margin-left: 10px;
+  float: left;
+  height: 72px;
+  width: 200px;
+  text-align: left;
+  color: #333333;
+  font-size: 12px;
+  font-family: RalewayMed, sans-serif;
+}
+
+#chartEnclosure {
+  /*margin-left: 20px;*/
+  /*width: 70%;*/
+  overflow: auto;
+  height: 230px;
+  position: static;
+  z-index: -1;
+  opacity: 1;
+  display: table;
+  /*background-color: #000000;*/
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+#footer {
+  width: 100%;
+  height: 9vh;
+  text-align: center;
+
+}
+
+#bottomText {
+  box-shadow: 0px 3px 0px 2px #AAAAAA;
+
+  display: inline-block;
+  position:fixed;
+  /*bottom:0;*/
+  margin-top: 91vh;
+  width: 300px;
+  margin-left: -150px;
+  height: 9vh;
+  background-color: #DDDDDD;
+  opacity: 0.9;
+}
+
+#bottomText p {
+  margin-top: 9px;
+  text-align: center;
+  font-size: 15px;
+  color: #333333;
+  font-family: RalewayMed, sans-serif;
+}
+
+.draggable {
+}
+
+#containment-wrapper {
+
+  position: static;
+  height: 88vh;
+  width: 100%;
+
+}
+
+#widespace {
+  width: 1000px;
+}
+
+
+.Icon1 {
+  margin: 5px;
+  height: 40px;
+  width: 40px;
+  float: left;
+  background-size: cover;
+
+
+}
+.Icon1:hover {
+  /*height: 50px;
+  width: 50px;*/
+  -webkit-filter: drop-shadow(0 0 10px rgba(255,255,255,.7));
+  -moz-filter: drop-shadow(0 0px 10px  rgba(255,255,255,.7));
+  -ms-filter: drop-shadow(0 0px 10px  rgba(255,255,255,.7));
+  -o-filter: drop-shadow(0 0px 10px  rgba(255,255,255,.7));
+  filter: drop-shadow(0 0px 10px  rgba(255,255,255,.7));
+}
+
+dl {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: var(--chartWidth);
+  /*max-width: var(--chartWidth);*/
+  animation-timing-function: linear;
+  position: relative;
+  margin-left: -70px;
+  /*margin-right: 10%;*/
+  /*background-color: #000000;*/
+
+}
+/*SPAGEHTTI CODE!!*/
+
+@keyframes totalTransform { from {width: 600px; height: 450px;} to {width: var(--totalWidth); height: var(--totalHeight);}}
+@keyframes topTransform {from {width: 600px; height: 70px;} to {width: var(--totalWidth); height: var(--topHeight);}}
+@keyframes groupTransform {from {width: 130px; height: 380px;} to {width: var(--groupWidth); height: var(--groupHeight);}}
+@keyframes fileTransform {from {width: 180px; height: 380px;} to {width: var(--fileWidth); height: var(--fileHeight);}}
+@keyframes descTransform {from {width: 289px; height: 380px;} to {width: var(--descWidth); height: var(--descHeight);}}
+@keyframes chartTransform {from {width: 150px; } to {width: var(--chartWidth); }}
+@keyframes bottomTransform { from {padding-top: 70px; width: 600px; height: 370px; } to {padding-top: var(--topHeight); width: var(--totalWidth); height: var(--groupHeight); }}
+@keyframes fileStyleTransform {from {width: 180px; } to {width: var(--fileWidth); }}
+@keyframes groupStyleTransform { from {width: 130px; } to {width: var(--fileWidth); }}
+
+.fileStyle {
+  position: absolute;
+  height: 36px;
+  width: var(--fileWidth);
+  animation-timing-function: linear;
+
+  /*Also found under finderFilesBar */
+  -webkit-box-shadow:inset 2px 0px 1px -2px #777;
+  -moz-box-shadow:inset 2px 0px 1px -2px #777;
+  box-shadow:inset 2px 0px 1px -2px #777;
+
+}
+.fileStyle2 {
+  height: 36px;
+  width: var(--fileWidth);
+  animation-timing-function: linear;
+
+  /*Also found under finderFilesBar */
+  -webkit-box-shadow:inset 2px 0px 1px -2px #777;
+  -moz-box-shadow:inset 2px 0px 1px -2px #777;
+  box-shadow:inset 2px 0px 1px -2px #777;
+
+}
+
+.groupStyle {
+  position: absolute;
+  height: 32px;
+  width: var(--groupWidth);
+  animation-timing-function: linear;
+  /*background-color: #000000;*/
+
+}
+.groupStyle2 {
+  height: 32px;
+  width: var(--groupWidth);
+  animation-timing-function: linear;
+
+
+
+}
+/*More SPAGEHTTI CODE!!*/
+@keyframes totalTransformRev { from {width: 75vw; height: 90vh;} to {width: var(--totalWidth); height: var(--totalHeight);}}
+@keyframes topTransformRev {from {width: 75vw; height: 10vh;} to {width: var(--totalWidth); height: var(--topHeight);}}
+@keyframes groupTransformRev {from {width: 15vw; height: 75vh;} to {width: var(--groupWidth); height: var(--groupHeight);}}
+@keyframes fileTransformRev {from {width: 15vw; height: 75vh;} to {width: var(--fileWidth); height: var(--fileHeight);}}
+@keyframes descTransformRev {from {width: 45vw; height: 75vh;} to {width: var(--descWidth); height: var(--descHeight);}}
+@keyframes chartTransformRev {from {width: 35vw; } to {width: var(--chartWidth); }}
+@keyframes bottomTransformRev { from {padding-top: 10vh; width: 100vw; height: 75vh; } to {padding-top: var(--topHeight); width: var(--totalWidth); height: var(--groupHeight); }}
+@keyframes fileStyleTransformRev {from {width: 15vw; } to {width: var(--fileWidth); }}
+@keyframes groupStyleTransformRev { from {width: 15vw; } to {width: var(--fileWidth); }}
